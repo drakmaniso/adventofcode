@@ -16,7 +16,8 @@ func main() {
 		counts = [26]byte{}
 		for _, r := range id {
 			if r < 'a' || r > 'z' {
-				panic("not a letter")
+				fmt.Fprintf(os.Stderr, "ERROR: not a letter\n")
+				continue
 			}
 			counts[r-'a']++
 		}
@@ -24,10 +25,10 @@ func main() {
 		has2, has3 := false, false
 		for _, c := range counts {
 			switch c {
-			case 3:
-				has3 = true
 			case 2:
 				has2 = true
+			case 3:
+				has3 = true
 			}
 		}
 		if has2 {
@@ -36,7 +37,7 @@ func main() {
 		if has3 {
 			threes++
 		}
-		
+
 	}
 
 	fmt.Printf("Answer: %d\n", twos*threes)
