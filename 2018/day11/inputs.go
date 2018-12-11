@@ -21,3 +21,13 @@ var examples = []struct {
 	{18, 33, 45, 29},
 	{42, 21, 61, 30},
 }
+
+var examples2 = []struct {
+	serial int
+	x,y int
+	size int
+	power int
+}{
+	{18, 90,269,16,113},
+	{42,232,251,12,119},
+}
