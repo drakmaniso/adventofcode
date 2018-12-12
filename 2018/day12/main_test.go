@@ -18,7 +18,8 @@ func TestRead(t *testing.T) {
 }
 
 func TestPart1(t *testing.T) {
-	answer := simulate(example, 20)
+	initial, rules := read(example)
+	answer := simulate(initial, rules, 20)
 	if answer != 325 {
 		t.Errorf("wrong answer (%d instead of 325)", answer)
 	}
